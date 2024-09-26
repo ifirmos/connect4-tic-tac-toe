@@ -1,0 +1,63 @@
+{
+  "game": {
+    "play": "JOGAR",
+    "rules_tic_tac_toe": "REGRAS JOGO DA VELHA",
+    "rules_connect4": "REGRAS LIGUE 4",
+    "tic_tac_toe": {
+      "objective": "Objetivo",
+      "objective_text": "O primeiro jogador que conseguir alinhar 3 peças consecutivas (na horizontal, vertical ou diagonal) vence a partida.",
+      "board": "Tabuleiro",
+      "board_text": "O tabuleiro é uma grade vertical de 3 colunas por 3 linhas.",
+      "pieces": "Peças",
+      "pieces_text": "Cada jogador possui uma peça de cor e figura distinta.",
+      "rules": "Regras",
+      "rule1": "Os jogadores se alternam com um movimento de cada jogador, preenchendo o espaço vazio com a peça de sua cor em qualquer espaço do tabuleiro.",
+      "rule2": "O jogo continua até que um dos jogadores consiga alinhar 3 peças consecutivas, ou até que o tabuleiro fique completamente cheio, resultando em um empate.",
+      "end_game": "Fim de Jogo",
+      "end_game_text": "O jogo acaba após um dos jogadores conseguir alinhar as 3 peças. O vencedor é declarado pela cor escolhida. Em caso de empate, os jogadores podem reiniciar a partida ou sair do jogo."
+    },
+    "connect4": {
+      "objective": "Objetivo",
+      "objective_text": "O primeiro jogador que conseguir alinhar quatro peças consecutivas (na horizontal, vertical ou diagonal) vence a partida.",
+      "board": "Tabuleiro",
+      "board_text": "O tabuleiro é uma grade vertical de 7 colunas por 6 linhas. As peças são inseridas pelo topo e caem para a posição mais baixa disponível.",
+      "pieces": "Peças",
+      "pieces_text": "Cada jogador possui um conjunto de peças de cor distinta.",
+      "rules": "Regras",
+      "rule1": "Os jogadores se alternam com um movimento de cada jogador, inserindo uma peça em qualquer coluna.",
+      "rule2": "As peças caem na posição mais baixa disponível. O jogo continua até que um jogador alinhe 4 peças consecutivas ou o tabuleiro fique cheio, resultando em empate.",
+      "end_game": "Fim de Jogo",
+      "end_game_text": "O jogo acaba após um dos jogadores conseguir alinhar as 4 peças. O vencedor é declarado pela cor. Em caso de empate, os jogadores podem reiniciar a partida ou sair do jogo."
+    }
+  },
+  "requirements": {
+    "title": "REQUISITOS",
+    "functional_requirements": "REQUISITOS FUNCIONAIS",
+    "non_functional_requirements": "REQUISITOS NÃO-FUNCIONAIS",
+    "rf001": {
+      "title": "RF-001: Apresentação do Tabuleiro de Jogo",
+      "description": "O sistema deve apresentar aos jogadores o tabuleiro, que deve ter 7 colunas com 6 linhas."
+    },
+    "rf002": {
+      "title": "RF-002: Quantidade de Jogadores",
+      "description": "Cada partida deverá ter exatamente 2 jogadores."
+    },
+    "rf003": {
+      "title": "RF-003: Diferenciação entre os Jogadores",
+      "description": "Cada jogador terá uma cor específica para suas peças dentro do jogo."
+    },
+    "rf004": {
+      "title": "RF-004: Controle de Peças",
+      "description": "Cada jogador joga com 21 peças e só terá o controle das peças pertencentes à cor que escolher."
+    },
+    "rf005": {
+      "title": "RF-005: Posicionamento das Peças",
+      "description": "A vitória da partida visa a que 4 peças sejam ligadas, podendo ser nas posições horizontal, vertical ou diagonais."
+    },
+    "rf006": {
+      "title": "RF-006: Identificador de Vitória",
+      "description": "Após o jogador conseguir o ligamento das 4 peças, o sistema identifica e nomeia o vencedor pela cor das peças."
+    },
+    "tictactoe": "Jogo da Velha"
+  }
+}

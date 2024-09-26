@@ -1,0 +1,41 @@
+<div class="flex-column align-content-center justify-content-center">
+  <h1 class="text-center">{{ 'connect4' | translate }}</h1>
+
+  <!-- Nomes dos Jogadores e Placar -->
+  <div class="flex justify-content-between mx-7 ">
+    <div class="p-card p-5" [style.color]="gameService.players[0]!.cor">
+      <h2>{{ gameService.players[0]!.nome }}</h2>
+      <p>{{ gameService.players[0]!.pontos }} {{ 'points' | translate }}</p>
+    </div>
+
+    <div class="p-card p-5" [style.color]="gameService.players[1]!.cor">
+      <h2>{{ gameService.players[1]!.nome }}</h2>
+      <p>{{ gameService.players[1]!.pontos }} {{ 'points' | translate }}</p>
+    </div>
+  </div>
+
+  <!-- Tabuleiro -->
+  <div class="grid align-content-center justify-content-center">
+    <div
+      class="p-col column-reverse"
+      *ngFor="let coluna of gameService.getBoard()[0]; let indiceColuna = index"
+      (click)="manipularCliqueColuna(indiceColuna)"
+      [style.background-color]="indiceColuna % 2 === 0 ? '#add8e6' : '#87CEFA'"
+      style="cursor: pointer; border: 1px solid #00000042; padding: 4px;"
+    >
+      <div
+        class="cell p-mb-2"
+        *ngFor="let celula of gameService.getBoard(); let indiceLinha = index"
+        [style.background-color]="gameService.board[indiceLinha][indiceColuna] || '#FFF'"
+        style="width: 60px; height: 60px; border: 2px solid #00000073;"
+      ></div>
+    </div>
+  </div>
+
+  <!-- Diálogo de Vitória/Empate -->
+  <p-dialog [header]="'result' | translate" [(visible)]="mostrarDialogo" [modal]="true" [closable]="false" [draggable]="false">
+    <p>{{ mensagemDialogo }}</p>
+    <p-button label="{{ 'restart-game' | translate }}" icon="pi pi-refresh" (click)="reiniciarJogo()"></p-button>
+    <p-button label="{{ 'end-game' | translate }}" icon="pi pi-times" (click)="voltarParaHome()"></p-button>
+  </p-dialog>
+</div>

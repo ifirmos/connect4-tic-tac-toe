@@ -1,0 +1,29 @@
+.player-config-container {
+  .p-dialog {
+    padding: 1.5rem;  // Ajuste de padding no diálogo
+    .p-field {
+      margin-bottom: 1.5rem;  // Espaçamento entre os campos
+    }
+
+    label {
+      margin-bottom: 0.5rem;  // Espaçamento entre label e input
+      font-weight: bold;  // Deixar o label mais destacado
+    }
+
+    input, p-dropdown, p-colorPicker {
+      width: 100%;  // Ocupam a largura total da coluna
+    }
+
+    .p-colorPicker {
+      width: 100%;
+    }
+
+    .p-button {
+      margin-top: 1rem;
+    }
+
+    .p-grid {
+      gap: 1rem;  // Espaçamento extra entre as colunas
+    }
+  }
+}

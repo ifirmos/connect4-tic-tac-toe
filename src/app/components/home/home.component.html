@@ -1,0 +1,70 @@
+<div class="home-container p-grid p-justify-center p-align-center text-center">
+  <!-- Seção de Bem-vindo -->
+  <h1>{{ 'welcome' | translate }}</h1>
+
+  <!-- Seção de Seleção de Jogo -->
+  <div class="grid h-10rem">
+    <div class="col-6">
+      <img
+        src="assets/images/connect4.png"
+        (click)="selectGame('connect4'); "
+        [ngClass]="{ 'selected-game': selectedGame === 'connect4' }"
+        class="game-banner"
+        alt="Connect 4"
+      />
+    </div>
+    <div class="col-6">
+      <img
+        src="assets/images/tictactoe.png"
+        (click)="selectGame('tictactoe'); "
+        [ngClass]="{ 'selected-game': selectedGame === 'tictactoe' }"
+        class="game-banner"
+        alt="Jogo da Velha"
+      />
+    </div>
+  </div>
+
+  <!-- Seção de Tipo de Jogo -->
+  <div class="game-mode p-grid p-justify-center m-5">
+    <p-button label="{{ 'playerVsPlayer' | translate }}" (click)="selectMode('pvp'); " [class.p-button-success]="selectedMode === 'pvp'" class="p-button-lg p-button-outlined"></p-button>
+    <p-button label="{{ 'playerVsCpu' | translate }}" (click)="selectMode('cpu'); " [class.p-button-success]="selectedMode === 'cpu'" class="p-button-lg p-button-outlined p-ml-2"></p-button>
+  </div>
+
+  <!-- Inputs de Nomes e ColorPicker dos Jogadores -->
+  <div class="flex align-items-center justify-content-center text-center m-5">
+    <div *ngIf="selectedMode === 'pvp'" class="p-grid p-formgrid p-fluid">
+      <div>
+        <label for="player1-name">{{ 'player1Name' | translate }}</label>
+        <div class="p-inputgroup">
+          <input pInputText id="player1-name" [(ngModel)]="player1Name" placeholder="{{ 'enterPlayerName1' | translate }}" />
+          <p-colorPicker [(ngModel)]="player1Color" format="hex" [style]="{ width: '40px' }"></p-colorPicker>
+        </div>
+      </div>
+      <div>
+        <label for="player2-name">{{ 'player2Name' | translate }}</label>
+        <div class="p-inputgroup">
+          <input pInputText id="player2-name" [(ngModel)]="player2Name" placeholder="{{ 'enterPlayerName2' | translate }}" />
+          <p-colorPicker [(ngModel)]="player2Color" format="hex" [style]="{ width: '40px' }"></p-colorPicker>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="selectedMode === 'cpu'" class="p-field p-col-12">
+      <label for="player1-name">{{ 'playerName' | translate }}</label>
+      <div class="p-inputgroup">
+        <input pInputText id="player1-name" [(ngModel)]="player1Name" placeholder="{{ 'enterPlayerName1' | translate }}" class="p-inputtext-lg" />
+        <p-colorPicker [(ngModel)]="player1Color" format="hex" [style]="{ width: '40px' }"></p-colorPicker>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botão Start -->
+  <div class="start-button m-5">
+    <p-button
+      label="{{ 'start' | translate }}"
+      (click)="startGame(); "
+      class="p-button-lg"
+      [disabled]="!canStartGame()"
+    ></p-button>
+  </div>
+</div>

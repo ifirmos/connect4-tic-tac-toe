@@ -1,0 +1,24 @@
+.board {
+  display: flex;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 1rem;
+}
+
+.column-reverse {
+  display: flex;
+  flex-direction: column; /* Exibe as células de baixo para cima */
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #000;
+  border-radius: 50%; /* Células redondas */
+  margin: 2px;
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+}

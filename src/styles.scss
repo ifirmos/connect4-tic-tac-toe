@@ -1,0 +1,75 @@
+/* Estilos comuns para ambos os jogos */
+.tabuleiro {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Espaçamento entre as células */
+  margin: 20px auto;
+  background-color: #005bbb; /* Cor de fundo para o tabuleiro Connect 4 */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para as células do tabuleiro */
+.celula {
+  width: 80px;
+  height: 80px;
+  background-color: white; /* Cor das células vazias */
+  border-radius: 50%; /* Formato circular para Connect 4 */
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #f0f0f0; /* Cor ao passar o mouse sobre uma célula */
+  }
+}
+
+/* Estilos para as células preenchidas */
+.celula.preenchida {
+  &.jogador1 {
+    background-color: #ff0000; /* Cor do jogador 1 */
+  }
+
+  &.jogador2 {
+    background-color: #0000ff; /* Cor do jogador 2 */
+  }
+}
+
+/* Jogo da Velha */
+.tabuleiro.tictactoe {
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas para Jogo da Velha */
+  grid-template-rows: repeat(3, 1fr); /* 3 linhas */
+  background-color: transparent; /* Sem fundo para Jogo da Velha */
+  gap: 5px; /* Menor espaçamento entre as células */
+}
+
+.celula.tictactoe {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #333; /* Borda para Jogo da Velha */
+  background-color: white;
+  border-radius: 0; /* Células quadradas */
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilos adicionais */
+.celula.tictactoe.jogador1 {
+  color: red;
+}
+
+.celula.tictactoe.jogador2 {
+  color: blue;
+}
+
+
+::ng-deep .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+  background: #ffffff;
+  border-color: #2196F3;
+  color: #2196F3;
+}

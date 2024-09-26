@@ -1,0 +1,115 @@
+<div class="p-5 w-10 left-0">
+  <img src="assets/images/br-round.png" (click)="setLanguage('pt-BR');" class="w-1 p-5" alt="Bandeira Brasil" />
+  <img src="assets/images/us-round.png" (click)="setLanguage('en');" class="w-1 p-5" alt="Bandeira Estados Unidos" />
+  <img src="assets/images/es-round.png" (click)="setLanguage('es');" class="w-1 p-5" alt="Bandeira Espanha" />
+</div>
+
+<p-tabView>
+  <!-- Aba de jogar -->
+  <p-tabPanel class="text-color-blue-700 text-5x1" header="{{ 'play' | translate }}">
+    <p>
+      <router-outlet></router-outlet>
+    </p>
+  </p-tabPanel>
+
+  <!-- Exibindo o idioma selecionado -->
+  <p>{{ idiomaSelecionado }}</p>
+
+  <!-- Regras do Jogo da Velha -->
+  <p-tabPanel header="{{ 'rules-tic-tac-toe' | translate }}">
+    <div class="content">
+      <h1>{{ 'tic_tac_toe.title' | translate }}</h1>
+      <h2>{{ 'tic_tac_toe.objective' | translate }}</h2>
+      <p>{{ 'tic_tac_toe.objective_text' | translate }}</p>
+      <h2>{{ 'tic_tac_toe.board' | translate }}</h2>
+      <p>{{ 'tic_tac_toe.board_text' | translate }}</p>
+      <h2>{{ 'tic_tac_toe.pieces' | translate }}</h2>
+      <p>{{ 'tic_tac_toe.pieces_text' | translate }}</p>
+      <h2>{{ 'tic_tac_toe.rules' | translate }}</h2>
+      <ul>
+        <li>{{ 'tic_tac_toe.rule1' | translate }}</li>
+        <li>{{ 'tic_tac_toe.rule2' | translate }}</li>
+      </ul>
+      <h2>{{ 'tic_tac_toe.end_game' | translate }}</h2>
+      <p>{{ 'tic_tac_toe.end_game_text' | translate }}</p>
+    </div>
+  </p-tabPanel>
+
+  <!-- Regras do Connect 4 -->
+  <p-tabPanel header="{{ 'rules-connect4' | translate }}">
+    <div class="content">
+      <h1>{{ 'connect4_game.title' | translate }}</h1>
+      <h2>{{ 'connect4_game.objective' | translate }}</h2>
+      <p>{{ 'connect4_game.objective_text' | translate }}</p>
+      <h2>{{ 'connect4_game.board' | translate }}</h2>
+      <p>{{ 'connect4_game.board_text' | translate }}</p>
+      <h2>{{ 'connect4_game.pieces' | translate }}</h2>
+      <p>{{ 'connect4_game.pieces_text' | translate }}</p>
+      <h2>{{ 'connect4_game.rules' | translate }}</h2>
+      <ul>
+        <li>{{ 'connect4_game.rule1' | translate }}</li>
+        <li>{{ 'connect4_game.rule2' | translate }}</li>
+      </ul>
+      <h2>{{ 'connect4_game.end_game' | translate }}</h2>
+      <p>{{ 'connect4_game.end_game_text' | translate }}</p>
+    </div>
+  </p-tabPanel>
+
+  <!-- Especificação de Requisitos -->
+  <p-tabPanel header="{{ 'requirements.title' | translate }}">
+    <div class="content">
+      <h2>{{ 'requirements.title' | translate }}</h2>
+      <h3>{{ 'requirements.functional_requirements' | translate }}</h3>
+      <div class="requirement">
+        <h4>{{ 'requirements.rf001.title' | translate }}</h4>
+        <p>{{ 'requirements.rf001.description' | translate }}</p>
+      </div>
+      <div class="requirement">
+        <h4>{{ 'requirements.rf002.title' | translate }}</h4>
+        <p>{{ 'requirements.rf002.description' | translate }}</p>
+      </div>
+      <div class="requirement">
+        <h4>{{ 'requirements.rf003.title' | translate }}</h4>
+        <p>{{ 'requirements.rf003.description' | translate }}</p>
+      </div>
+      <div class="requirement">
+        <h4>{{ 'requirements.rf004.title' | translate }}</h4>
+        <p>{{ 'requirements.rf004.description' | translate }}</p>
+      </div>
+      <!-- Continue aplicando chaves de tradução da mesma forma para os outros requisitos -->
+    </div>
+  </p-tabPanel>
+
+  <!-- Termo de Abertura -->
+  <p-tabPanel header="{{ 'project_opening.title' | translate }}">
+    <div class="content">
+      <h2>{{ 'project_opening.title' | translate }}</h2>
+      <p>{{ 'project_opening.sponsor' | translate }}: PROF. ME. ELENILTON DEZENGRINI</p>
+      <p>{{ 'project_opening.project_manager' | translate }}: {{ 'self_managed_team' | translate }}</p>
+      <p>{{ 'project_opening.date' | translate }}: 31/08/2024</p>
+      <h3>{{ 'project_opening.overview' | translate }}</h3>
+      <p>{{ 'project_opening.overview_text' | translate }}</p>
+      <h3>{{ 'project_opening.objectives' | translate }}</h3>
+      <ul>
+        <li>{{ 'project_opening.objective1' | translate }}</li>
+        <li>{{ 'project_opening.objective2' | translate }}</li>
+        <li>{{ 'project_opening.objective3' | translate }}</li>
+      </ul>
+      <h3>{{ 'project_opening.scope' | translate }}</h3>
+      <p>{{ 'project_opening.scope_text' | translate }}</p>
+      <h3>{{ 'project_opening.budget' | translate }}</h3>
+      <p>{{ 'project_opening.budget_text' | translate }}</p>
+      <h3>{{ 'project_opening.schedule' | translate }}</h3>
+      <p>{{ 'project_opening.schedule_text' | translate }}</p>
+      <ul>
+        <li>{{ 'project_opening.phase1' | translate }}</li>
+        <li>{{ 'project_opening.phase2' | translate }}</li>
+        <li>{{ 'project_opening.phase3' | translate }}</li>
+        <li>{{ 'project_opening.phase4' | translate }}</li>
+        <li>{{ 'project_opening.phase5' | translate }}</li>
+      </ul>
+      <h3>{{ 'project_opening.approval' | translate }}</h3>
+      <p>{{ 'project_opening.approval_text' | translate }}</p>
+    </div>
+  </p-tabPanel>
+</p-tabView>
